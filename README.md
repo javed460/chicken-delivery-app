@@ -1,6 +1,11 @@
 Chicken Delivery Application 🍗
 A full-featured Spring Boot web application for chicken delivery service with separate interfaces for administrators and customers.
 
+<img width="981" height="543" alt="image" src="https://github.com/user-attachments/assets/a47ece3f-4322-416f-bc35-e96619ae0cf9" />
+
+<img width="987" height="553" alt="image" src="https://github.com/user-attachments/assets/d43628b9-7cf5-41d8-9c9c-ab11c47fa881" />
+
+
 🌟 Features
 For Customers
 User Registration & Authentication - Secure signup and login system
