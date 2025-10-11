@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chicken Delivery</title>
+    <th:block th:insert="fragments/header :: head"></th:block>
+</head>
+<body>
+<th:block th:insert="fragments/header :: body"></th:block>
+
+<div class="hero-section">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">Delicious Chicken Delivered</h1>
+        <p class="lead mb-4">Order the best chicken in town and have it delivered to your door</p>
+        <a th:href="@{/register}" class="btn btn-primary btn-lg px-4 me-2">Get Started</a>
+        <a th:href="@{/login}" class="btn btn-outline-light btn-lg px-4">Login</a>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row text-center mb-5">
+        <div class="col-md-4">
+            <div class="card p-4 mb-4">
+                <i class="bi bi-truck fs-1 text-primary mb-3"></i>
+                <h3>Fast Delivery</h3>
+                <p>Get your order delivered quickly and efficiently</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-4 mb-4">
+                <i class="bi bi-star fs-1 text-primary mb-3"></i>
+                <h3>Quality Food</h3>
+                <p>We use only the finest ingredients for our chicken</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-4 mb-4">
+                <i class="bi bi-credit-card fs-1 text-primary mb-3"></i>
+                <h3>Easy Ordering</h3>
+                <p>Simple and intuitive ordering process</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h2>About Our Chicken</h2>
+            <p>Our chicken is sourced from local farms that practice ethical farming. We marinate our chicken for 24 hours in a special blend of herbs and spices before slow-roasting to perfection.</p>
+            <p>Whether you prefer grilled, fried, or roasted, we have options to satisfy every craving.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" class="img-fluid rounded" alt="Delicious chicken">
+        </div>
+    </div>
+</div>
+
+<th:block th:insert="fragments/footer"></th:block>
+</body>
+</html>
