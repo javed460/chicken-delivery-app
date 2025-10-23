@@ -1,0 +1,61 @@
+<!doctype html>
+<html th:replace="~{fragments/layout :: layout (~{::body})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h3 class="mb-3">Order Chicken</h3>
+        <p class="text-muted">Price: <strong>₹<span th:text="${pricePerKg}"></span> per kg</strong></p>
+
+        <form th:action="@{/order}" th:object="${order}" method="post" id="orderForm">
+          <div class="row g-3">
+            <!-- Weight -->
+            <div class="col-md-4">
+              <label class="form-label">Weight (kg)</label>
+              <input class="form-range" type="range" min="0.5" max="5" step="0.5" id="weightRange" value="1.0">
+              <input class="form-control mt-2" th:field="*{weightKg}" id="weightInput" type="number" min="0.5" step="0.5" required>
+              <div class="form-text">Minimum order: 0.5 kg</div>
+            </div>
+
+            <!-- Address -->
+            <div class="col-md-8">
+              <label class="form-label">Delivery Address</label>
+              <input class="form-control mb-2" th:field="*{addressLine1}" placeholder="Address line 1" required>
+              <input class="form-control mb-2" th:field="*{addressLine2}" placeholder="Address line 2 (optional)">
+              <div class="row g-2">
+                <div class="col-md-6">
+                  <input class="form-control" th:field="*{city}" placeholder="City" required>
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control" th:field="*{zip}" placeholder="ZIP Code" required>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn-success w-100" type="submit">
+              <i class="bi bi-bag-check me-1"></i>Place Order
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const range = document.getElementById('weightRange');
+  const input = document.getElementById('weightInput');
+
+  range.addEventListener('input', () => {
+    input.value = range.value;
+  });
+
+  input.addEventListener('input', () => {
+    range.value = input.value;
+  });
+</script>
+</body>
+</html>
